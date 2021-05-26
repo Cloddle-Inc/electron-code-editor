@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Cloddle Editor</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+
+<div class="head">
+
+  <h1 class="header-h1">Welcome to Cloddle Editor <i>BETA</i></h1>
+
+</div>
+
+<a id="newFile"><div class="open-file"><p class="div1-text"> <i class="fa fa-file" aria-hidden="true"></i>  &nbsp; Open File</p></div></a>
+
+<div class="open-folder"><p class="div2-text"> <i class="fa fa-folder" aria-hidden="true"></i>  &nbsp;Open Folder</p></div>
+    <script>
+
+        const {ipcRenderer} = require('electron');
+
+        let openNewFile = document.querySelector("#newFile");
+
+          openNewFile.addEventListener("click", function(){
+              ipcRenderer.send("key:openNewFile");
+          });
+
+    </script>
+</body>
+</html>

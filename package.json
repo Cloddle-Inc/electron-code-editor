@@ -1,0 +1,17 @@
+{
+  "name": "cloddle-ide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Cloddle Inc.",
+  "license": "ISC",
+  "dependencies": {
+    "@editorjs/editorjs": "^2.21.0",
+    "electron": "^12.0.9",
+    "fs": "^0.0.1-security",
+    "os": "^0.1.1"
+  }
+}
