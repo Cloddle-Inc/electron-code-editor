@@ -1,9 +1,10 @@
 const { ipcRenderer, ipcMain} = require("electron");
+const delay = require('delay');
 
 ipcRenderer.send("key:getFileContent", "");
 
 ipcRenderer.on('returnKey:getFileContent', (event, arg) => {
-    var editor = CodeMirror.fromTextArea(textEditor, {
+    var editor = CodeMirror.fromTextArea(document.getElementById('textEditor'), {
     theme: "ayu-dark",
     mode: "javascript",
     lineNumbers: true,
@@ -12,14 +13,30 @@ ipcRenderer.on('returnKey:getFileContent', (event, arg) => {
     autoCloseBrackets : true ,
     autoCloseTags : true ,
     styleActiveLine : true 
-  }).setValue(arg)
-
-  let saveFile = document.querySelector("#saveFile");
-  let fileNow = document.querySelector("#textEditor").value
+  })
   
-  saveFile.addEventListener("click", function(){
-      console.log(fileNow.value)
-      ipcRenderer.send("key:saveFile", fileNow);
+  editor.setValue(arg)
+
+  let codeArea = document.getElementById('textArea')
+  let tabContent = document.getElementById('tabContent')
+  let savedIcon = document.getElementById('savedIcon');
+
+  savedIcon.style.display = "none"
+
+  function saveAnim() {
+    savedIcon.style.display = ""
+    setTimeout(function() {
+      savedIcon.style.display = "none"
+    }, 200);
+  }
+
+  $(window).keypress(function(event) {
+    
+    if (!(event.which == 115 && event.ctrlKey) && !(event.which == 19)) return true;
+       saveAnim()
+      ipcRenderer.send("key:saveFile", editor.getValue());
+      event.preventDefault();
+      return false;
   });
 })
   

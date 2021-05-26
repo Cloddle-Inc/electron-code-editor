@@ -69,7 +69,7 @@ app.on('ready', () => {
         ipcMain.on('key:saveFile', (event, arg) =>{
             fs.writeFile(fileFullPath, arg, function(err) {
                 if (err) throw err;
-                console.log(arg)
+                return true;
             }); 
         })
     }

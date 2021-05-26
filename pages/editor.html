@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cloddle IDE - 1.0.0</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;500&display=swap" rel="stylesheet">
     <script src="../assets/codemirror/lib/codemirror.js"></script>
     <link rel="stylesheet" href="../assets/codemirror/lib/codemirror.css" />
     <link rel="stylesheet" href="../assets/codemirror/theme/ayu-dark.css" />
     <script src="../assets/codemirror/mode/javascript/javascript.js"></script>
     <link rel="stylesheet" href="../editor/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   </head>
-  <body>
-    <button id="saveFile">Save</button>
-    
-    <textarea id="textEditor"></textarea>
+  <body> 
+  
+    <div class="editorTab"><p id="tabContent" class="tabContent1">main.html <i id="savedIcon" style="color: rgba(15, 228, 33, 0.658);" class="fa fa-check" aria-hidden="true"></i></p></div>
+
+    <textarea onchange="fileChanged()" id="textEditor"></textarea>
   
   </body>
   <script src="../editor/editor.js"></script>

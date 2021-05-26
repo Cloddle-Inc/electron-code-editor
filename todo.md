@@ -8,4 +8,11 @@
 
 - Find uploaded files extention.
 
-- Save changed files (with ctrl + s)
+- Save changed files (with ctrl + s) *finished*
+
+- Add saved alert *finished*
+
+# TODO // 27 Mayis 2021
+
+- Find uploaded files extention.
+

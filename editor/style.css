@@ -2,3 +2,30 @@ body {
     background-color: #0a0e14;
     overflow: hidden;
 }
+
+.editorTab {
+    width: 190px;
+    height: 25px;
+    margin-left: 20px;
+    border-radius: 7px;
+    background-color: #3a4353;
+    cursor: pointer;
+    -webkit-transition:all 2s ease;
+    -moz-transition:all 2s ease;
+    -o-transition:all 2s ease;
+    -ms-transition:all 2s ease;
+    transition:all 0.4s ease;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .tabContent1 {
+    font-family: 'Farro', sans-serif;
+    font-weight: 100;
+  }
+
+  .tabContent2 {
+    font-family: 'Farro', sans-serif;
+    font-weight: 18;
+  }
