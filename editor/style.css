@@ -7,7 +7,10 @@ body {
     width: 190px;
     height: 25px;
     margin-left: 20px;
-    border-radius: 7px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     background-color: #3a4353;
     cursor: pointer;
     -webkit-transition:all 2s ease;

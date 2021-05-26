@@ -3,6 +3,7 @@ const url = require('url');
 const path = require('path');
 const fs = require('fs');
 const { create } = require('domain');
+const { basename } = require('path');
 
 const {app, BrowserWindow,ipcMain, dialog, Menu, remote} = electron;
 
@@ -44,14 +45,15 @@ app.on('ready', () => {
                     createEditorWindow();
     
                     var fileFullPath = response.filePaths[0];
-    
+                    
                     console.log(response)
                     fs.readFile(fileFullPath, 'utf8' , (err, data) => {
                         if (err) {
                           console.error(err)
                           
-                        } else {
-                            sendContent(data);
+                        } else {         
+                            var fileName = basename(fileFullPath);
+                            sendContent(data, fileName);
                             saveFile(fileFullPath);
                         }
                       });
@@ -75,10 +77,13 @@ app.on('ready', () => {
     }
 
 
-function sendContent(data) {
+function sendContent(data, fileName) {
     ipcMain.on('key:getFileContent', (event, arg) => {
-        console.log(arg)
-        event.reply('returnKey:getFileContent', data)
+        var fileData = {
+            "fileContent" : data,
+            "fileName" : fileName
+        }
+        event.reply('returnKey:getFileContent', fileData)
     })
 }
 

@@ -2,17 +2,16 @@
 
 - Get content of files to IDE. *finished*
 
-- Find uploaded files extention.
-
 # TODO // 26 Mayis 2021
-
-- Find uploaded files extention.
 
 - Save changed files (with ctrl + s) *finished*
 
 - Add saved alert *finished*
 
+- Send uploaded files name to Front. *finished*
+
 # TODO // 27 Mayis 2021
 
-- Find uploaded files extention.
+- Make a left files bar to editor.
+
 

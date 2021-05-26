@@ -15,13 +15,14 @@ ipcRenderer.on('returnKey:getFileContent', (event, arg) => {
     styleActiveLine : true 
   })
   
-  editor.setValue(arg)
-
+  editor.setValue(arg.fileContent);
   let codeArea = document.getElementById('textArea')
   let tabContent = document.getElementById('tabContent')
   let savedIcon = document.getElementById('savedIcon');
 
-  savedIcon.style.display = "none"
+  tabContent.innerHTML = arg.fileName // File name to tab.
+
+  savedIcon.style.display = "none" 
 
   function saveAnim() {
     savedIcon.style.display = ""
