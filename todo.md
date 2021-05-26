@@ -1,11 +1,11 @@
 # TODO  // 25 Mayis 2021
 
-- Dosya içeriğini editöre yansıtma. *finished*
+- Get content of files to IDE. *finished*
 
-- Dosya uzantılarını ayrıştırma. 
+- Find uploaded files extention.
 
 # TODO // 26 Mayis 2021
 
-- Dosya uzantılarını ayrıştırma. 
+- Find uploaded files extention.
 
-- Dosyaları save etme.
+- Save changed files (with ctrl + s)
