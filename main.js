@@ -45,15 +45,15 @@ app.on('ready', () => {
                     createEditorWindow();
     
                     var fileFullPath = response.filePaths[0];
-                    
-                    console.log(response)
+
                     fs.readFile(fileFullPath, 'utf8' , (err, data) => {
                         if (err) {
                           console.error(err)
                           
                         } else {         
                             var fileName = basename(fileFullPath);
-                            sendContent(data, fileName);
+                            var fileExt = path.extname(fileName);
+                            sendContent(data, fileName, fileExt);
                             saveFile(fileFullPath);
                         }
                       });
@@ -77,11 +77,12 @@ app.on('ready', () => {
     }
 
 
-function sendContent(data, fileName) {
+function sendContent(data, fileName, fileExt) {
     ipcMain.on('key:getFileContent', (event, arg) => {
         var fileData = {
             "fileContent" : data,
-            "fileName" : fileName
+            "fileName" : fileName,
+            "fileExt" : fileExt
         }
         event.reply('returnKey:getFileContent', fileData)
     })

@@ -4,7 +4,7 @@ body {
 }
 
 .editorTab {
-    width: 190px;
+    width: 130px;
     height: 25px;
     margin-left: 20px;
     border-bottom-left-radius: 0px;
@@ -20,15 +20,10 @@ body {
     transition:all 0.4s ease;
     color: aliceblue;
     text-align: center;
-    margin-top: 12px;
+    margin-top: 7px;
   }
 
   .tabContent1 {
     font-family: 'Farro', sans-serif;
     font-weight: 100;
-  }
-
-  .tabContent2 {
-    font-family: 'Farro', sans-serif;
-    font-weight: 18;
   }

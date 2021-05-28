@@ -12,6 +12,11 @@
 
 # TODO // 27 Mayis 2021
 
-- Make a left files bar to editor.
+- Make a left files-bar to editor. 
+
+# TODO // 28 Mayis 2021
+
+- Make a left files-bar to editor.
+
 
 
